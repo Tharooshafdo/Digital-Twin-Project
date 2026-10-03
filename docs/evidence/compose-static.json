@@ -1,0 +1,13 @@
+{
+  "status": "PARSED_ONLY",
+  "services": [
+    "db",
+    "init",
+    "api",
+    "worker",
+    "broker-init",
+    "broker",
+    "bridge"
+  ],
+  "docker_runtime": "NOT RUN: executable/daemon unavailable"
+}

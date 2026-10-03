@@ -1,0 +1,499 @@
+{
+  "study": {
+    "run_id": "run_c924b95b3a614db08896c29145577830",
+    "job_id": "job_659998ff12ba40e69b617a26c16b0c83"
+  },
+  "job_status": "completed",
+  "import": {
+    "dataset_id": "sha256:4e55f9dfe932b2d50f0ed9755273afaf03fb918261341b95677c6754b0ebbe8c",
+    "mapping_sha256": "5c262229d3fe6a666ae239aa791a2c308149326550fef3fd18c5634474cb8de6",
+    "schema_version": "line.measurement.v1",
+    "accepted_rows": 12,
+    "rejected_rows": 1,
+    "mapping": {
+      "timestamp_column": "timestamp",
+      "timezone": "Asia/Colombo",
+      "asset_id": "TL_001",
+      "source_id": "demo.generator.v2",
+      "data_origin": "synthetic",
+      "connection_state": "CONNECTED",
+      "state_column": "connection_state",
+      "signals": {
+        "vs_ll_kv": {
+          "column": "Vs_kV",
+          "scale": 1
+        },
+        "vr_ll_kv": {
+          "column": "Vr_kV",
+          "scale": 1
+        },
+        "p_recv_mw": {
+          "column": "Pr_MW",
+          "scale": 1
+        },
+        "q_recv_mvar": {
+          "column": "Qr_MVAr",
+          "scale": 1
+        },
+        "p_send_mw": {
+          "column": "Ps_MW",
+          "scale": 1
+        },
+        "q_send_mvar": {
+          "column": "Qs_MVAr",
+          "scale": 1
+        },
+        "is_a": {
+          "column": "Is_A",
+          "scale": 1
+        },
+        "ir_a": {
+          "column": "Ir_A",
+          "scale": 1
+        }
+      }
+    }
+  },
+  "report": {
+    "run_id": "run_c924b95b3a614db08896c29145577830",
+    "manifest": {
+      "platform_version": "0.1.0",
+      "schema_version": "platform.run.v1",
+      "adapter_version": "2.0",
+      "physics_version": "balanced.pi.pandapower3.5.5.v1",
+      "clock_mode": "replay",
+      "revision_id": "rev_6e24672c52e849e3b7890d53aaeb4d40",
+      "revision_status": "published",
+      "network": {
+        "frequency_hz": 50.0,
+        "components": [
+          {
+            "id": "BUS_A",
+            "type_id": "ac.bus",
+            "name": "BUS_A",
+            "parameters": {
+              "nominal_kv": 132
+            },
+            "terminals": [],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 0.0,
+              "y": 100.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.BUS_A"
+          },
+          {
+            "id": "BUS_B",
+            "type_id": "ac.bus",
+            "name": "BUS_B",
+            "parameters": {
+              "nominal_kv": 132
+            },
+            "terminals": [],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 230.0,
+              "y": 100.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.BUS_B"
+          },
+          {
+            "id": "BUS_C",
+            "type_id": "ac.bus",
+            "name": "BUS_C",
+            "parameters": {
+              "nominal_kv": 132
+            },
+            "terminals": [],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 460.0,
+              "y": 100.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.BUS_C"
+          },
+          {
+            "id": "BUS_D",
+            "type_id": "ac.bus",
+            "name": "BUS_D",
+            "parameters": {
+              "nominal_kv": 33
+            },
+            "terminals": [],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 690.0,
+              "y": 330.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.BUS_D"
+          },
+          {
+            "id": "TL_001",
+            "type_id": "ac.line",
+            "name": "TL_001",
+            "parameters": {
+              "nominal_kv": 132.0,
+              "nominal_frequency_hz": 50.0,
+              "length_km": 65.0,
+              "r_ohm_per_km": 0.08,
+              "x_ohm_per_km": 0.35,
+              "c_nf_per_km": 9.0,
+              "max_i_ka": 0.6,
+              "parallel_circuits": 1,
+              "bundle_count_per_phase": 1,
+              "derating_factor": 1.0,
+              "line_type": "ol",
+              "reference_temperature_c": 20.0,
+              "alpha_per_c": 0.00403,
+              "use_measured_temperature": false,
+              "parameter_source": "Synthetic teaching case, not CEB asset data",
+              "voltage_warn_kv": 0.4,
+              "voltage_alarm_kv": 0.8
+            },
+            "terminals": [
+              {
+                "name": "from",
+                "bus_id": "BUS_A",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              },
+              {
+                "name": "to",
+                "bus_id": "BUS_B",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 100.0,
+              "y": 200.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.TL_001"
+          },
+          {
+            "id": "TL_002",
+            "type_id": "ac.line",
+            "name": "TL_002",
+            "parameters": {
+              "nominal_kv": 132.0,
+              "nominal_frequency_hz": 50.0,
+              "length_km": 40.0,
+              "r_ohm_per_km": 0.1,
+              "x_ohm_per_km": 0.32,
+              "c_nf_per_km": 10.0,
+              "max_i_ka": 0.55,
+              "parameter_source": "Synthetic teaching case, not CEB asset data"
+            },
+            "terminals": [
+              {
+                "name": "from",
+                "bus_id": "BUS_B",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              },
+              {
+                "name": "to",
+                "bus_id": "BUS_C",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 330.0,
+              "y": 200.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.TL_002"
+          },
+          {
+            "id": "TR_001",
+            "type_id": "ac.transformer2w",
+            "name": "TR_001",
+            "parameters": {
+              "sn_mva": 40,
+              "vn_hv_kv": 132,
+              "vn_lv_kv": 33,
+              "vk_percent": 12,
+              "vkr_percent": 0.4,
+              "pfe_kw": 30,
+              "i0_percent": 0.1,
+              "shift_degree": 0
+            },
+            "terminals": [
+              {
+                "name": "hv",
+                "bus_id": "BUS_B",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              },
+              {
+                "name": "lv",
+                "bus_id": "BUS_D",
+                "domain": "AC",
+                "nominal_kv": 33.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 400.0,
+              "y": 330.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.TR_001"
+          },
+          {
+            "id": "LOAD_B",
+            "type_id": "ac.load_pq",
+            "name": "LOAD_B",
+            "parameters": {
+              "p_mw": 20,
+              "q_mvar": 4
+            },
+            "terminals": [
+              {
+                "name": "bus",
+                "bus_id": "BUS_B",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 230.0,
+              "y": 480.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.LOAD_B"
+          },
+          {
+            "id": "LOAD_C",
+            "type_id": "ac.load_pq",
+            "name": "LOAD_C",
+            "parameters": {
+              "p_mw": 40,
+              "q_mvar": 8
+            },
+            "terminals": [
+              {
+                "name": "bus",
+                "bus_id": "BUS_C",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 440.0,
+              "y": 480.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.LOAD_C"
+          },
+          {
+            "id": "LOAD_D",
+            "type_id": "ac.load_pq",
+            "name": "LOAD_D",
+            "parameters": {
+              "p_mw": 8,
+              "q_mvar": 2
+            },
+            "terminals": [
+              {
+                "name": "bus",
+                "bus_id": "BUS_D",
+                "domain": "AC",
+                "nominal_kv": 33.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 650.0,
+              "y": 480.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.LOAD_D"
+          },
+          {
+            "id": "GRID_001",
+            "type_id": "ac.external_grid",
+            "name": "GRID_001",
+            "parameters": {
+              "vm_pu": 1.01
+            },
+            "terminals": [
+              {
+                "name": "bus",
+                "bus_id": "BUS_A",
+                "domain": "AC",
+                "nominal_kv": 132.0,
+                "phases": "positive_sequence"
+              }
+            ],
+            "in_service": true,
+            "parent_id": null,
+            "position": {
+              "x": 0.0,
+              "y": -60.0
+            },
+            "parameter_version": "rev_6e24672c52e849e3b7890d53aaeb4d40.GRID_001"
+          }
+        ],
+        "provenance": "synthetic"
+      },
+      "valid_from": "2020-01-01T00:00:00+00:00",
+      "valid_to": null,
+      "network_sha256": "e748c3532cddd329fd8f9a6fe2206ff1ab2cc762481d2e470bb7bf00d54f0489",
+      "plugins": {
+        "ac.bus": "1.0.0",
+        "ac.line": "1.0.0",
+        "ac.transformer2w": "1.0.0",
+        "ac.external_grid": "1.0.0",
+        "ac.load_pq": "1.0.0",
+        "ac.generator_pq": "1.0.0",
+        "ac.shunt": "1.0.0",
+        "ac.switch": "1.0.0",
+        "catalog.substation": "1.0.0",
+        "catalog.feeder": "1.0.0",
+        "catalog.transformer3w": "1.0.0",
+        "catalog.motor": "1.0.0",
+        "catalog.load_zip": "1.0.0",
+        "catalog.battery": "1.0.0",
+        "catalog.pv": "1.0.0",
+        "catalog.wind": "1.0.0",
+        "catalog.hydro": "1.0.0",
+        "catalog.diesel": "1.0.0",
+        "catalog.synchronous_machine": "1.0.0",
+        "catalog.svc": "1.0.0",
+        "catalog.statcom": "1.0.0",
+        "catalog.hvdc": "1.0.0",
+        "catalog.converter": "1.0.0",
+        "catalog.reactor": "1.0.0",
+        "catalog.meter": "1.0.0",
+        "catalog.ct_pt": "1.0.0",
+        "catalog.pmu": "1.0.0",
+        "catalog.ied": "1.0.0",
+        "catalog.relay": "1.0.0",
+        "catalog.weather_sensor": "1.0.0",
+        "catalog.tower": "1.0.0",
+        "catalog.span": "1.0.0",
+        "catalog.conductor": "1.0.0",
+        "catalog.insulator": "1.0.0",
+        "catalog.earthing": "1.0.0",
+        "catalog.arrester": "1.0.0"
+      },
+      "dependencies": {
+        "pandapower": "3.5.5",
+        "numpy": "2.3.5",
+        "pydantic": "2.13.5",
+        "SQLAlchemy": "2.0.41"
+      },
+      "input_roles": [
+        "vs_ll_kv",
+        "p_recv_mw",
+        "q_recv_mvar"
+      ],
+      "validation_roles": [
+        "vr_ll_kv",
+        "is_a",
+        "ir_a",
+        "p_send_mw",
+        "q_send_mvar"
+      ],
+      "assumptions": [
+        "Balanced nominal pi",
+        "Total 3-phase receiving P/Q positive OUT",
+        "Circuit ratings are illustrative"
+      ],
+      "alarm_policy": {
+        "high_kv": 0.08,
+        "clear_kv": 0.04,
+        "consecutive": 3
+      },
+      "dataset_manifest": {
+        "dataset_id": "sha256:4e55f9dfe932b2d50f0ed9755273afaf03fb918261341b95677c6754b0ebbe8c",
+        "mapping_sha256": "5c262229d3fe6a666ae239aa791a2c308149326550fef3fd18c5634474cb8de6",
+        "schema_version": "line.measurement.v1",
+        "accepted_rows": 12,
+        "rejected_rows": 1,
+        "mapping": {
+          "timestamp_column": "timestamp",
+          "timezone": "Asia/Colombo",
+          "asset_id": "TL_001",
+          "source_id": "demo.generator.v2",
+          "data_origin": "synthetic",
+          "connection_state": "CONNECTED",
+          "state_column": "connection_state",
+          "signals": {
+            "vs_ll_kv": {
+              "column": "Vs_kV",
+              "scale": 1
+            },
+            "vr_ll_kv": {
+              "column": "Vr_kV",
+              "scale": 1
+            },
+            "p_recv_mw": {
+              "column": "Pr_MW",
+              "scale": 1
+            },
+            "q_recv_mvar": {
+              "column": "Qr_MVAr",
+              "scale": 1
+            },
+            "p_send_mw": {
+              "column": "Ps_MW",
+              "scale": 1
+            },
+            "q_send_mvar": {
+              "column": "Qs_MVAr",
+              "scale": 1
+            },
+            "is_a": {
+              "column": "Is_A",
+              "scale": 1
+            },
+            "ir_a": {
+              "column": "Ir_A",
+              "scale": 1
+            }
+          }
+        }
+      },
+      "kind": "replay",
+      "request_sha256": "0930dba92b6fe6ea0afaa9c1e5382fb252a4268e98ec86008f9703f706ed5347"
+    },
+    "states": 12,
+    "usable": 12,
+    "excluded": 0,
+    "voltage_kv": {
+      "bias": -0.11275772664773716,
+      "mae": 0.11275772664773716,
+      "rmse": 0.11390121460667797,
+      "p95_absolute": 0.13681939245730843
+    },
+    "p95_limit": "Exact p95 available up to 10,000 usable samples",
+    "failures": [],
+    "research_results": [],
+    "limitations": [
+      "Synthetic/reference evidence does not establish field accuracy",
+      "Balanced steady-state only",
+      "No operational ratings, cable thermal physics, protection or equipment commands"
+    ]
+  }
+}

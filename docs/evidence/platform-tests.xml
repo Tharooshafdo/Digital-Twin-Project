@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="44" time="40.578" timestamp="2026-10-03T16:13:59.920075+05:30" hostname="Tharoosha_Fdo"><testcase classname="tests.test_platform" name="test_migrations_populated_upgrade" time="0.730" /><testcase classname="tests.test_platform" name="test_roles_and_project_scoping" time="1.670" /><testcase classname="tests.test_platform" name="test_network_preflight[voltage]" time="0.003" /><testcase classname="tests.test_platform" name="test_network_preflight[missing_bus]" time="0.003" /><testcase classname="tests.test_platform" name="test_network_preflight[duplicate]" time="0.002" /><testcase classname="tests.test_platform" name="test_network_preflight[self_loop]" time="0.003" /><testcase classname="tests.test_platform" name="test_network_preflight[phase]" time="0.002" /><testcase classname="tests.test_platform" name="test_plugins_compatibility_and_real_transformer" time="0.407" /><testcase classname="tests.test_platform" name="test_plugin_extension_without_solver_edit" time="0.366" /><testcase classname="tests.test_platform" name="test_unsupported_island_reference_policy[island]" time="0.271" /><testcase classname="tests.test_platform" name="test_unsupported_island_reference_policy[multiple_sources]" time="0.274" /><testcase classname="tests.test_platform" name="test_unsupported_island_reference_policy[unsupported]" time="0.002" /><testcase classname="tests.test_platform" name="test_topology_save_reload_immutable_run" time="0.805" /><testcase classname="tests.test_platform" name="test_csv_mapping_zero_bad_reject_and_timezone" time="0.003" /><testcase classname="tests.test_platform" name="test_asof_does_not_hide_recent_bad" time="0.011" /><testcase classname="tests.test_platform" name="test_current_utc_freshness[live--3600-DATA_UNAVAILABLE]" time="1.304" /><testcase classname="tests.test_platform" name="test_current_utc_freshness[live-3600-DATA_UNAVAILABLE]" time="0.979" /><testcase classname="tests.test_platform" name="test_current_utc_freshness[replay--3600-SOLVED]" time="0.966" /><testcase classname="tests.test_platform" name="test_duplicate_conflicting_identity_restart_alarm_outbox" time="2.705" /><testcase classname="tests.test_platform" name="test_job_ownership_race_and_expired_lease" time="0.526" /><testcase classname="tests.test_platform" name="test_outbox_recovery_ownership" time="0.829" /><testcase classname="tests.test_platform" name="test_raw_residual_and_covariance" time="0.929" /><testcase classname="tests.test_platform" name="test_alarm_missing_late_duplicate_do_not_clear" time="1.189" /><testcase classname="tests.test_platform" name="test_mqtt_durable_commit_dead_letter_and_overload" time="1.304" /><testcase classname="tests.test_platform" name="test_real_api_import_replay_report_lineage_export" time="1.916" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[network]" time="0.902" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[scenario]" time="1.164" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[estimation]" time="0.966" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[thermal]" time="1.012" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[three_phase]" time="1.068" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[fault]" time="0.962" /><testcase classname="tests.test_platform" name="test_persisted_research_and_scenario[sag]" time="0.569" /><testcase classname="tests.test_platform" name="test_pause_resume_cancel_and_backlog" time="0.547" /><testcase classname="tests.test_platform" name="test_new_immutable_timeline_and_event_selection" time="1.296" /><testcase classname="tests.test_platform" name="test_natural_identity_conflict" time="1.056" /><testcase classname="tests.test_platform" name="test_sectioned_electrical_cascade_and_connected[66.8-13.5]" time="0.471" /><testcase classname="tests.test_platform" name="test_sectioned_electrical_cascade_and_connected[-30--5]" time="0.439" /><testcase classname="tests.test_platform" name="test_sectioned_electrical_cascade_and_connected[0-0]" time="0.400" /><testcase classname="tests.test_platform" name="test_populated_natural_identity_upgrade" time="0.152" /><testcase classname="tests.test_platform" name="test_transformer_taps_and_simulated_switch" time="0.914" /><testcase classname="tests.test_platform" name="test_installed_approved_example_plugin" time="0.018" /><testcase classname="tests.test_recovery" name="test_sqlite_backup_restore_isolated" time="8.853" /><testcase classname="tests.test_recovery" name="test_versioned_alarm_policy_and_asof_snapshot" time="0.730" /><testcase classname="tests.test_recovery" name="test_retention_archive_blocks_unpublished_and_preserves_manifest" time="0.950"><failure message="sqlalchemy.exc.StatementError: (builtins.TypeError) Object of type datetime is not JSON serializable&#10;[SQL: INSERT INTO audit_events (id, project_id, actor, action, created_at, payload) VALUES (?, ?, ?, ?, ?, ?)]">self = &lt;sqlalchemy.engine.base.Connection object at 0x000002156F352D20&gt;
+dialect = &lt;sqlalchemy.dialects.sqlite.pysqlite.SQLiteDialect_pysqlite object at 0x000002156F3C7560&gt;
+constructor = &lt;bound method DefaultExecutionContext._init_compiled of &lt;class 'sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext'&gt;&gt;
+statement = &lt;sqlalchemy.dialects.sqlite.base.SQLiteCompiler object at 0x000002156D09EC30&gt;
+parameters = (), execution_options = immutabledict({})
+args = (&lt;sqlalchemy.dialects.sqlite.base.SQLiteCompiler object at 0x000002156D09EC30&gt;, (), &lt;sqlalchemy.sql.dml.Insert object ...-state only', 'No operational ratings, cable thermal physics, protection or equipment commands']}}, type_=NullType())])
+kw = {'cache_hit': &lt;CacheStats.CACHE_HIT: 0&gt;}
+conn = &lt;sqlalchemy.pool.base._ConnectionFairy object at 0x000002156D1A2030&gt;
+
+    def _execute_context(
+        self,
+        dialect: Dialect,
+        constructor: Callable[..., ExecutionContext],
+        statement: Union[str, Compiled],
+        parameters: Optional[_AnyMultiExecuteParams],
+        execution_options: _ExecuteOptions,
+        *args: Any,
+        **kw: Any,
+    ) -&gt; CursorResult[Any]:
+        """Create an :class:`.ExecutionContext` and execute, returning
+        a :class:`_engine.CursorResult`."""
+    
+        if execution_options:
+            yp = execution_options.get("yield_per", None)
+            if yp:
+                execution_options = execution_options.union(
+                    {"stream_results": True, "max_row_buffer": yp}
+                )
+        try:
+            conn = self._dbapi_connection
+            if conn is None:
+                conn = self._revalidate_connection()
+    
+&gt;           context = constructor(
+                dialect, self, conn, execution_options, *args, **kw
+            )
+
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1811: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\sqlalchemy\engine\default.py:1485: in _init_compiled
+    flattened_processors[key](compiled_params[key])
+.venv\Lib\site-packages\sqlalchemy\sql\sqltypes.py:2792: in process
+    return json_serializer(value)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\__init__.py:231: in dumps
+    return _default_encoder.encode(obj)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:200: in encode
+    chunks = self.iterencode(o, _one_shot=True)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:258: in iterencode
+    return _iterencode(o, 0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.encoder.JSONEncoder object at 0x0000021505B96A20&gt;
+o = datetime.datetime(2026, 10, 3, 10, 44, 39, 444541, tzinfo=datetime.timezone.utc)
+
+    def default(self, o):
+        """Implement this method in a subclass such that it returns
+        a serializable object for ``o``, or calls the base implementation
+        (to raise a ``TypeError``).
+    
+        For example, to support arbitrary iterators, you could
+        implement default like this::
+    
+            def default(self, o):
+                try:
+                    iterable = iter(o)
+                except TypeError:
+                    pass
+                else:
+                    return list(iterable)
+                # Let the base class default method raise the TypeError
+                return super().default(o)
+    
+        """
+&gt;       raise TypeError(f'Object of type {o.__class__.__name__} '
+                        f'is not JSON serializable')
+E       TypeError: Object of type datetime is not JSON serializable
+
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:180: TypeError
+
+The above exception was the direct cause of the following exception:
+
+platform = {'client': &lt;starlette.testclient.TestClient object at 0x000002156F472F90&gt;, 'credentials': {'id': 'user_662fa7d1828a41c...est-of-tharo/pytest-9/test_retention_archive_blocks_0/platform.db), 'rid': 'rev_e7fabdafc42f4b1daad7fcdc0d88f23b', ...}
+dataset = ('timestamp,Vs_kV,Vr_kV,Pr_MW,Qr_MVAr,Ps_MW,Qs_MVAr,Is_A,Ir_A,connection_state\r\n2026-01-01T00:00:00Z,132.1,126.58360..._A': '', 'Pr_MW': '', 'Ps_MW': '', ...}, 'reason': "Invalid isoformat string: 'invalid-demo-time'", 'row_number': 7}]})
+
+    def test_retention_archive_blocks_unpublished_and_preserves_manifest(platform,dataset):
+        from grid_twin.retention import archive_runs
+        import gzip
+        j,_=make_job(platform,dataset[2]['frames'][:2]);drain(platform,j['job_id'])
+        result=archive_runs(platform['engine'],'demo',0,platform['tmp']/'archive',False)
+        assert any(r['run_id']==j['run_id'] for r in result['skipped'])
+        with platform['engine'].begin() as conn:conn.execute(db.outbox.update().values(published_at=db.now()))
+        plan=archive_runs(platform['engine'],'demo',0,platform['tmp']/'archive',False)
+        assert plan['eligible'][0]['states']==2 and not plan['archived']
+&gt;       archived=archive_runs(platform['engine'],'demo',0,platform['tmp']/'archive',True)
+
+tests\test_recovery.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\grid_twin\retention.py:47: in archive_runs
+    db.audit_event(conn,'retention-cli','run.archived',project_id,{'run_id':run_id,'archive':str(archive),'sha256':checksum,'state_count':count,'report':report})
+src\grid_twin\db.py:136: in audit_event
+    conn.execute(audit.insert().values(id=uid("audit"), project_id=project_id,
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1415: in execute
+    return meth(
+.venv\Lib\site-packages\sqlalchemy\sql\elements.py:523: in _execute_on_connection
+    return connection._execute_clauseelement(
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1637: in _execute_clauseelement
+    ret = self._execute_context(
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1817: in _execute_context
+    self._handle_dbapi_exception(
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:2351: in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+.venv\Lib\site-packages\sqlalchemy\engine\base.py:1811: in _execute_context
+    context = constructor(
+.venv\Lib\site-packages\sqlalchemy\engine\default.py:1485: in _init_compiled
+    flattened_processors[key](compiled_params[key])
+.venv\Lib\site-packages\sqlalchemy\sql\sqltypes.py:2792: in process
+    return json_serializer(value)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\__init__.py:231: in dumps
+    return _default_encoder.encode(obj)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:200: in encode
+    chunks = self.iterencode(o, _one_shot=True)
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:258: in iterencode
+    return _iterencode(o, 0)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;json.encoder.JSONEncoder object at 0x0000021505B96A20&gt;
+o = datetime.datetime(2026, 10, 3, 10, 44, 39, 444541, tzinfo=datetime.timezone.utc)
+
+    def default(self, o):
+        """Implement this method in a subclass such that it returns
+        a serializable object for ``o``, or calls the base implementation
+        (to raise a ``TypeError``).
+    
+        For example, to support arbitrary iterators, you could
+        implement default like this::
+    
+            def default(self, o):
+                try:
+                    iterable = iter(o)
+                except TypeError:
+                    pass
+                else:
+                    return list(iterable)
+                # Let the base class default method raise the TypeError
+                return super().default(o)
+    
+        """
+&gt;       raise TypeError(f'Object of type {o.__class__.__name__} '
+                        f'is not JSON serializable')
+E       sqlalchemy.exc.StatementError: (builtins.TypeError) Object of type datetime is not JSON serializable
+E       [SQL: INSERT INTO audit_events (id, project_id, actor, action, created_at, payload) VALUES (?, ?, ?, ?, ?, ?)]
+
+..\..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\json\encoder.py:180: StatementError</failure></testcase></testsuite></testsuites>

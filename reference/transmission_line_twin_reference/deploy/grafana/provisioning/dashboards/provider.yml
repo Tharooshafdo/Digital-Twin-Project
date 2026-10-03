@@ -1,0 +1,6 @@
+apiVersion: 1
+providers:
+  - name: Twin handbook
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

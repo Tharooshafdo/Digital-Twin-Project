@@ -1,0 +1,51 @@
+{
+  "reference-tests.xml": {
+    "tests": "30",
+    "failures": "0",
+    "errors": "0",
+    "time": "466.540"
+  },
+  "all-tests.xml": {
+    "tests": "76",
+    "failures": "0",
+    "errors": "0",
+    "time": "151.555"
+  },
+  "browser-checks.json": {
+    "checks": 11
+  },
+  "ready": {
+    "status": "ready",
+    "database": "sqlite"
+  },
+  "diagnostics": {
+    "database": "sqlite",
+    "utc": "2026-10-03T10:58:46.301455+00:00",
+    "counts": {
+      "measurements": 306,
+      "dead_letters": 0,
+      "jobs": 8,
+      "unpublished_outbox": 884,
+      "backlog_jobs": 1,
+      "duplicate_deliveries": 0,
+      "failed_snapshots": 0
+    },
+    "backlog_oldest_age_s": 256.948302,
+    "latest_observation_wall_age_s": 23713426.301455,
+    "solve_latency_ms_last_10000": {
+      "p50": 233.75174999819137,
+      "p95": 590.3852699979311,
+      "p99": 854.1137970036649
+    },
+    "diagnostics_database_query_ms": 20.534600000246428,
+    "disk": {
+      "total_bytes": 241886154752,
+      "free_bytes": 90496303104
+    },
+    "worker_concurrency_per_process": 1,
+    "job_backlog_limit": 100,
+    "import_row_limit": 10000,
+    "mqtt": "disabled",
+    "production_scale_validated": false
+  }
+}

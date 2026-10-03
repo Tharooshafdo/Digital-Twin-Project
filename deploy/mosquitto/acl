@@ -1,0 +1,6 @@
+user dt_publisher
+topic write dt/v1/project/demo/input/line/+/measurement
+
+user dt_worker
+topic read dt/v1/project/demo/input/line/+/measurement
+topic write dt/v1/project/demo/run/+/line/+/state

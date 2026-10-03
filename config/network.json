@@ -1,0 +1,21 @@
+{
+  "snapshot_id": "synthetic.network.snapshot.001",
+  "event_time": "2026-01-01T00:00:00+00:00",
+  "topology_version": "synthetic.connected.v1", "frequency_hz": 50,
+  "buses": [{"id":"BUS_A","nominal_kv":132},
+    {"id":"BUS_B","nominal_kv":132}, {"id":"BUS_C","nominal_kv":132},
+    {"id":"BUS_D","nominal_kv":33}],
+  "sources": [{"bus":"BUS_A","vm_pu":1.01,"s_sc_max_mva":3000,"rx_max":0.1}],
+  "lines": [
+    {"id":"TL_001","from_bus":"BUS_A","to_bus":"BUS_B","length_km":65,
+     "r_ohm_per_km":0.08,"x_ohm_per_km":0.35,"c_nf_per_km":9,"max_i_ka":0.6},
+    {"id":"TL_002","from_bus":"BUS_B","to_bus":"BUS_C","length_km":40,
+     "r_ohm_per_km":0.1,"x_ohm_per_km":0.32,"c_nf_per_km":10,"max_i_ka":0.55}],
+  "transformers": [{"id":"TR_001","hv_bus":"BUS_B","lv_bus":"BUS_D",
+    "sn_mva":40,"vn_hv_kv":132,"vn_lv_kv":33,"vk_percent":12,
+    "vkr_percent":0.4,"pfe_kw":30,"i0_percent":0.1,"shift_degree":0}],
+  "loads": [{"id":"LOAD_B","bus":"BUS_B","p_mw":20,"q_mvar":4},
+    {"id":"LOAD_C","bus":"BUS_C","p_mw":40,"q_mvar":8},
+    {"id":"LOAD_D","bus":"BUS_D","p_mw":8,"q_mvar":2}],
+  "generators": []
+}

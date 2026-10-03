@@ -1,0 +1,43 @@
+{
+  "timestamp_column": "timestamp",
+  "timezone": "Asia/Colombo",
+  "asset_id": "TL_001",
+  "source_id": "demo.generator.v2",
+  "data_origin": "synthetic",
+  "connection_state": "CONNECTED",
+  "state_column": "connection_state",
+  "signals": {
+    "vs_ll_kv": {
+      "column": "Vs_kV",
+      "scale": 1
+    },
+    "vr_ll_kv": {
+      "column": "Vr_kV",
+      "scale": 1
+    },
+    "p_recv_mw": {
+      "column": "Pr_MW",
+      "scale": 1
+    },
+    "q_recv_mvar": {
+      "column": "Qr_MVAr",
+      "scale": 1
+    },
+    "p_send_mw": {
+      "column": "Ps_MW",
+      "scale": 1
+    },
+    "q_send_mvar": {
+      "column": "Qs_MVAr",
+      "scale": 1
+    },
+    "is_a": {
+      "column": "Is_A",
+      "scale": 1
+    },
+    "ir_a": {
+      "column": "Ir_A",
+      "scale": 1
+    }
+  }
+}

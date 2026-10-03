@@ -1,0 +1,8 @@
+user dt_publisher
+topic write dt/v1/input/demo/line/+/measurement
+topic write dt/v1/health/ping
+user dt_worker
+topic read dt/v1/input/demo/line/+/measurement
+topic write dt/v1/run/+/line/+/state
+user dt_viewer
+topic read dt/v1/run/+/line/+/state

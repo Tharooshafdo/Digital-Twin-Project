@@ -1,0 +1,21 @@
+# Verification record for version 2
+
+Executed on 2 October 2026 using a fresh isolated Python 3.12.14 environment and the supplied runtime and development lock files. Package installation completed successfully and pip check reported no broken requirements.
+
+The complete automated suite passed 30 tests with no failures. It covers independent pandapower versus ABCD calculations including forward, zero-load and reverse flow; terminal power balance; parallel circuits; measured temperature resistance; required input quality; open-end charging; topology mismatch; unavailable and failed model states; event-time parameter selection; timezone/nonfinite validation; replay freshness; independent residual roles; durable duplicate handling; conflicting identity; late-event latest ordering; transactional outbox; read-only API responses; immutable parameter registry; CSV units/timezone/rejection; batch replay; connected-network conservation and islands; state estimation; three-phase and short-circuit examples; thermal integration; residual learning with domain fallback; purged forecasting; signal alignment; mechanical geometry; and constrained parameter fitting.
+
+After the adapter identity and forecast metadata refinements, the three affected CSV/alignment/learning-and-forecast tests were repeated successfully. Third-party deprecation/future warnings remain visible in the test output; they concern pinned-library compatibility and did not cause numerical or workflow test failures.
+
+The synthetic one-day offline run committed 288 states, all solved, with zero rejected frames. Receiving-voltage residual bias and MAE were approximately −0.120270 kV and 0.120270 kV, and RMSE was 0.122683 kV. The synthetic observations intentionally contain voltage bias/noise. Sending active-power MAE was 0.022625 MW. Near-zero current and reactive-power residuals reflect shared equivalent-circuit generation, not independent field accuracy.
+
+The worked 132.1 kV and 66.8 MW plus 13.5 MVAr case gave receiving voltage 126.697514 kV, receiving current 310.556265 A, sending current 307.531842 A, sending power 68.292348 MW plus 16.950410 MVAr and active loss 1.492348 MW. The independent pi and pandapower implementations agree within the tested tolerances.
+
+The connected network gave total active loss 1.988060 MW and absolute source/load/loss balance mismatch below 0.000001 MW. The noiseless state-estimation example succeeded. The unbalanced example gave voltage unbalance about 0.049246 percent. The three-phase short-circuit example gave initial symmetrical fault current 1.947487 kA. Thermal and mechanical values are teaching-model results rather than certified equipment limits.
+
+For the one-day synthetic residual experiment, raw-physics test MAE was 0.133919 kV, unguarded hybrid MAE 0.017169 kV and guarded hybrid MAE 0.082537 kV. ML applied to only 44.83 percent of held-out frames under training-bound guards. The unguarded test interval covered about 89.66 percent despite a calibration 95th-percentile interval construction. This illustrates why observed coverage and guarded behaviour must be reported.
+
+The fifteen-minute synthetic forecast MAE was approximately 0.004796 MW versus persistence MAE 0.985274 MW. The ideal smooth synthetic day is intentionally easy; these values do not establish performance on real load fluctuations.
+
+Compose YAML syntax was parsed, Python sources compiled, service dependencies and PostgreSQL 18 volume placement reviewed, and Grafana/schema generators executed. Docker, Mosquitto, PostgreSQL and Grafana service runtimes are unavailable in this authoring environment, so the complete container stack, real broker delivery/restart behaviour, PostgreSQL restore and Grafana UI were not executed. Run the handbook’s local deployment and recovery checks before claiming those gates pass.
+
+No actual utility parameter set, approved live adapter or real-line holdout dataset was provided. Field accuracy, operational ratings, utility connectivity, production throughput and high availability remain to be established by the project team using the specified evidence and acceptance gates. The source is a research reference and does not issue equipment commands.

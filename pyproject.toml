@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "power-system-twin"
+version = "0.1.0"
+description = "Extensible synthetic research power-system twin"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pandapower==3.5.5", "numpy==2.3.5", "scipy==1.17.0", "pandas==2.3.3", "pydantic==2.13.5", "fastapi==0.115.12", "uvicorn==0.34.2", "SQLAlchemy==2.0.41", "psycopg[binary]==3.2.9", "paho-mqtt==2.1.0", "alembic==1.20.0", "argon2-cffi==25.1.0", "python-multipart==0.0.32", "tzdata==2026.4"]
+
+[project.entry-points."grid_twin.components"]
+teaching_capacitor = "grid_twin.example_plugin:TeachingCapacitorPlugin"
+
+[project.scripts]
+grid-twin = "grid_twin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

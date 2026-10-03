@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "transmission-line-twin-reference"
+version = "2.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "pandapower==3.5.5", "numpy==2.3.5", "scipy==1.17.0",
+  "pandas==2.3.3", "pydantic==2.13.5", "fastapi==0.115.12",
+  "uvicorn==0.34.2", "SQLAlchemy==2.0.41",
+  "psycopg[binary]==3.2.9", "paho-mqtt==2.1.0", "tzdata==2026.4"
+]
+
+[project.optional-dependencies]
+test = ["pytest==8.3.5", "httpx==0.28.1"]
+ml = ["scikit-learn==1.7.2", "joblib==1.5.2"]
+
+[project.scripts]
+tl-twin = "tl_twin.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

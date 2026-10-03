@@ -1,0 +1,54 @@
+{
+  "url": "http://127.0.0.1:8000",
+  "mocked_responses": false,
+  "checks": [
+    {
+      "check": "Authentication and overview from real database",
+      "status": "PASS"
+    },
+    {
+      "check": "Create line, save topology, reload persistent draft",
+      "status": "PASS"
+    },
+    {
+      "check": "Server rejects invalid electrical connection",
+      "status": "PASS"
+    },
+    {
+      "check": "Real two-winding-transformer plugin editable",
+      "status": "PASS"
+    },
+    {
+      "check": "CSV import preview, rejection review and persistent save",
+      "status": "PASS"
+    },
+    {
+      "check": "Replay through separate worker into 288 real persistent states",
+      "status": "PASS"
+    },
+    {
+      "check": "Historical charts, kV/MW/A units, residuals, status and history",
+      "status": "PASS"
+    },
+    {
+      "check": "Isolated scenario and baseline comparison persisted",
+      "status": "PASS"
+    },
+    {
+      "check": "Authorized human-readable report download with run lineage",
+      "status": "PASS"
+    },
+    {
+      "check": "Complete results CSV export",
+      "status": "PASS"
+    },
+    {
+      "check": "No browser JavaScript runtime errors",
+      "status": "PASS"
+    }
+  ],
+  "console_errors": [],
+  "run_id": "run_ec8c1d4095ea480a906b81611a7dc932",
+  "scenario_run_id": "run_319e7589481c41d8ae0f504c222c6172",
+  "browser_version": "153.0.8010.12"
+}

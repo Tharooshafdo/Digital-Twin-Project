@@ -1,0 +1,31 @@
+[
+  {
+    "asset_id": "TL_001",
+    "parameter_version": "synthetic.line.v1",
+    "topology_version": "isolated.pilot.v1",
+    "valid_from": "2020-01-01T00:00:00Z",
+    "from_bus": "BUS_A", "to_bus": "BUS_B",
+    "nominal_kv": 132.0, "nominal_frequency_hz": 50.0,
+    "length_km": 65.0, "r_ohm_per_km": 0.08,
+    "x_ohm_per_km": 0.35, "c_nf_per_km": 9.0,
+    "max_i_ka": 0.60, "parallel_circuits": 1,
+    "bundle_count_per_phase": 1, "derating_factor": 1.0,
+    "line_type": "ol", "in_service": true,
+    "reference_temperature_c": 20.0, "alpha_per_c": 0.00403,
+    "use_measured_temperature": false,
+    "parameter_source": "Synthetic teaching case, not CEB asset data",
+    "voltage_warn_kv": 0.4, "voltage_alarm_kv": 0.8
+  },
+  {
+    "asset_id": "TL_002",
+    "parameter_version": "synthetic.second.v1",
+    "topology_version": "isolated.pilot.v1",
+    "valid_from": "2020-01-01T00:00:00Z",
+    "from_bus": "BUS_C", "to_bus": "BUS_D",
+    "nominal_kv": 132.0, "nominal_frequency_hz": 50.0,
+    "length_km": 40.0, "r_ohm_per_km": 0.10,
+    "x_ohm_per_km": 0.32, "c_nf_per_km": 10.0,
+    "max_i_ka": 0.55,
+    "parameter_source": "Synthetic teaching case, not CEB asset data"
+  }
+]

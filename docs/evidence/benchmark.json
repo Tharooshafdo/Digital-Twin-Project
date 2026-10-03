@@ -1,0 +1,93 @@
+{
+  "hardware": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+    "logical_cpus": 8,
+    "python": "3.12.15",
+    "processor_details": {
+      "Name": "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+      "NumberOfCores": 4,
+      "NumberOfLogicalProcessors": 8
+    }
+  },
+  "workloads": [
+    {
+      "independent_assets": 1,
+      "snapshots_per_asset": 1,
+      "cadence": "burst; event spacing 300s without pacing",
+      "duration_s": 0.23118139999860432,
+      "committed": 1,
+      "solved": 1,
+      "throughput_states_per_s": 4.325607509972849,
+      "processing_latency_ms": {
+        "p50": 229.77540000283625,
+        "p95": 229.77540000283625,
+        "p99": 229.77540000283625
+      },
+      "admission_to_commit_ms": {
+        "p50": 231.1803000047803,
+        "p95": 231.1803000047803,
+        "p99": 231.1803000047803
+      },
+      "mean_state_payload_bytes": 3435.0,
+      "database_bytes": 286720
+    },
+    {
+      "independent_assets": 10,
+      "snapshots_per_asset": 1,
+      "cadence": "burst; event spacing 300s without pacing",
+      "duration_s": 1.6791662000032375,
+      "committed": 10,
+      "solved": 10,
+      "throughput_states_per_s": 5.955336642662721,
+      "processing_latency_ms": {
+        "p50": 159.01254999334924,
+        "p95": 206.24901000337556,
+        "p99": 218.8656420003099
+      },
+      "admission_to_commit_ms": {
+        "p50": 1013.916000003519,
+        "p95": 1613.8488749929818,
+        "p99": 1666.1016149926581
+      },
+      "mean_state_payload_bytes": 3454.0,
+      "database_bytes": 286720
+    },
+    {
+      "independent_assets": 100,
+      "snapshots_per_asset": 1,
+      "cadence": "burst; event spacing 300s without pacing",
+      "duration_s": 19.93956289999187,
+      "committed": 100,
+      "solved": 100,
+      "throughput_states_per_s": 5.015155071430416,
+      "processing_latency_ms": {
+        "p50": 195.39130000339355,
+        "p95": 248.8304049889848,
+        "p99": 275.0955559896831
+      },
+      "admission_to_commit_ms": {
+        "p50": 9790.30144999706,
+        "p95": 19021.304919996328,
+        "p99": 19758.133217998256
+      },
+      "mean_state_payload_bytes": 3461.3,
+      "database_bytes": 1892352
+    }
+  ],
+  "limitations": [
+    "Sequential single worker on local SQLite; no broker/network latency",
+    "One burst at each size by default; tail quantiles are descriptive, not statistically established service levels",
+    "No claim of sustainable 100-asset real-time cadence"
+  ],
+  "connected_network": {
+    "assets": 11,
+    "runs": 3,
+    "latency_ms": {
+      "p50": 181.14679999416694,
+      "p95": 187.53823999431916,
+      "p99": 188.1063679943327
+    },
+    "balance_error_mw": -1.6431015659179593e-08
+  }
+}

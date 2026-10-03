@@ -1,0 +1,296 @@
+{
+  "archive_sha256": "009edd5107184684c88e12a874649e47a75f7d6e6b75eaf95e712360e6d3c9fb",
+  "archive_files": [
+    {
+      "path": ".dockerignore",
+      "byte_identical": true
+    },
+    {
+      "path": ".gitignore",
+      "byte_identical": true
+    },
+    {
+      "path": "Dockerfile",
+      "byte_identical": true
+    },
+    {
+      "path": "README.md",
+      "byte_identical": true
+    },
+    {
+      "path": "VERIFICATION.md",
+      "byte_identical": true
+    },
+    {
+      "path": "compose.yaml",
+      "byte_identical": true
+    },
+    {
+      "path": "config\\csv_mapping.json",
+      "byte_identical": true
+    },
+    {
+      "path": "config\\lines.json",
+      "byte_identical": true
+    },
+    {
+      "path": "config\\network.json",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\grafana\\dashboards\\transmission-line.json",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\grafana\\provisioning\\dashboards\\provider.yml",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\grafana\\provisioning\\datasources\\postgres.yml",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\mosquitto\\acl",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\mosquitto\\mosquitto.conf",
+      "byte_identical": true
+    },
+    {
+      "path": "deploy\\postgres\\init-roles.sh",
+      "byte_identical": true
+    },
+    {
+      "path": "docs\\figures\\coordinator.png",
+      "byte_identical": true
+    },
+    {
+      "path": "docs\\figures\\nominal_pi.png",
+      "byte_identical": true
+    },
+    {
+      "path": "docs\\handbook.md",
+      "byte_identical": true
+    },
+    {
+      "path": "docs\\verification\\test-results.xml",
+      "byte_identical": true
+    },
+    {
+      "path": "pyproject.toml",
+      "byte_identical": true
+    },
+    {
+      "path": "requirements-dev.lock",
+      "byte_identical": true
+    },
+    {
+      "path": "requirements.lock",
+      "byte_identical": true
+    },
+    {
+      "path": "schemas\\line-config.v1.json",
+      "byte_identical": true
+    },
+    {
+      "path": "schemas\\measurement.v1.json",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\__init__.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\advanced.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\alignment.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\api.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\calibration.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\cli.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\contracts.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\forecast.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\importer.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\learning.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\mechanical.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\mqtt_io.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\network.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\physics.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\storage.py",
+      "byte_identical": true
+    },
+    {
+      "path": "src\\tl_twin\\twin.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tests\\test_reference.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\configure.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\first_line.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\init_db.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\make_dashboard.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\make_schemas.py",
+      "byte_identical": true
+    },
+    {
+      "path": "tools\\replay_docker.py",
+      "byte_identical": true
+    },
+    {
+      "path": "CHECKSUMS.sha256",
+      "byte_identical": true
+    }
+  ],
+  "reused_sources": [
+    {
+      "path": "advanced.py",
+      "byte_identical": true,
+      "original_sha256": "7b3259ee25b539740831811cf332fa2be24299d17b332c27a0a895653654a522",
+      "application_sha256": "7b3259ee25b539740831811cf332fa2be24299d17b332c27a0a895653654a522"
+    },
+    {
+      "path": "alignment.py",
+      "byte_identical": true,
+      "original_sha256": "2deebeed2af13ee5a2bd01027d1ccff5b5e0386191eaf837ae574c3f70e5dc35",
+      "application_sha256": "2deebeed2af13ee5a2bd01027d1ccff5b5e0386191eaf837ae574c3f70e5dc35"
+    },
+    {
+      "path": "api.py",
+      "byte_identical": true,
+      "original_sha256": "286d5aa616bdecd2efee79382a1ca2fda29a3cc3853b535c9603e56884ec234d",
+      "application_sha256": "286d5aa616bdecd2efee79382a1ca2fda29a3cc3853b535c9603e56884ec234d"
+    },
+    {
+      "path": "calibration.py",
+      "byte_identical": true,
+      "original_sha256": "3c5996dba08e1ec6118f5f29af92b769974d1411b25440ab793f383633dea295",
+      "application_sha256": "3c5996dba08e1ec6118f5f29af92b769974d1411b25440ab793f383633dea295"
+    },
+    {
+      "path": "cli.py",
+      "byte_identical": true,
+      "original_sha256": "c60d4c4331408bdc5d2c949281f75a6dd19a6c2fec07c319d78ea67c63418a0a",
+      "application_sha256": "c60d4c4331408bdc5d2c949281f75a6dd19a6c2fec07c319d78ea67c63418a0a"
+    },
+    {
+      "path": "contracts.py",
+      "byte_identical": true,
+      "original_sha256": "e308b91537ca124a9519ba019e6066d3ed275cbb85c3e4ac5819a3c285a74be8",
+      "application_sha256": "e308b91537ca124a9519ba019e6066d3ed275cbb85c3e4ac5819a3c285a74be8"
+    },
+    {
+      "path": "forecast.py",
+      "byte_identical": true,
+      "original_sha256": "2417558a51ff8fa434ad40031acd6d422ca95553d9d46bacec86854ae0891723",
+      "application_sha256": "2417558a51ff8fa434ad40031acd6d422ca95553d9d46bacec86854ae0891723"
+    },
+    {
+      "path": "importer.py",
+      "byte_identical": true,
+      "original_sha256": "2aaf363a1dbd2ff0ebfa371eb93794e8136d01688e4a7b2bf0e8d5abdd5ab4d0",
+      "application_sha256": "2aaf363a1dbd2ff0ebfa371eb93794e8136d01688e4a7b2bf0e8d5abdd5ab4d0"
+    },
+    {
+      "path": "learning.py",
+      "byte_identical": true,
+      "original_sha256": "2bba4602e377968ace5e1fb05275a3ede2233422093927bad53b693a3f3d714f",
+      "application_sha256": "2bba4602e377968ace5e1fb05275a3ede2233422093927bad53b693a3f3d714f"
+    },
+    {
+      "path": "mechanical.py",
+      "byte_identical": true,
+      "original_sha256": "6e28186c221c09906df977032748c6ee69d09d713a9ec6fdc9f0b7bc9cb8bda0",
+      "application_sha256": "6e28186c221c09906df977032748c6ee69d09d713a9ec6fdc9f0b7bc9cb8bda0"
+    },
+    {
+      "path": "mqtt_io.py",
+      "byte_identical": true,
+      "original_sha256": "43039a13c1004c9eac30cd398e021f57230e67582215a77aad1c4c25699093e5",
+      "application_sha256": "43039a13c1004c9eac30cd398e021f57230e67582215a77aad1c4c25699093e5"
+    },
+    {
+      "path": "network.py",
+      "byte_identical": true,
+      "original_sha256": "4f084761ab7dc64784f93e4019796d6ed81a2dc45b4c034f5b10f0ca9c42c6ea",
+      "application_sha256": "4f084761ab7dc64784f93e4019796d6ed81a2dc45b4c034f5b10f0ca9c42c6ea"
+    },
+    {
+      "path": "physics.py",
+      "byte_identical": true,
+      "original_sha256": "a25800b221524f496aaf1589a07c2ee687493facc92be790ad95d601ad050cf5",
+      "application_sha256": "a25800b221524f496aaf1589a07c2ee687493facc92be790ad95d601ad050cf5"
+    },
+    {
+      "path": "storage.py",
+      "byte_identical": true,
+      "original_sha256": "43fdddbb07be9d0944ee77840270155a316a92b47e7f04fe93ca5ab592ac8bb2",
+      "application_sha256": "43fdddbb07be9d0944ee77840270155a316a92b47e7f04fe93ca5ab592ac8bb2"
+    },
+    {
+      "path": "twin.py",
+      "byte_identical": false,
+      "original_sha256": "6dde6c422170f2b623c7d54716ff67f324a38de8d154dd47005287a758979e4b",
+      "application_sha256": "eab2a0209efe8fc80d2c5fbc898ed94bebc2366457fcb29a818ebb6faeb4ac3f",
+      "diff": "--- reference/twin.py\n+++ application/twin.py\n@@ -5,7 +5,7 @@\n from .storage import timestamp\n \n \n-def evaluate(m, configs, run_id, mode, clock_time=None, max_age_s=120):\n+def evaluate(m, configs, run_id, mode, clock_time=None, max_age_s=120, solver=None):\n     \"\"\"Physics inputs are Vs and receiving P/Q; other signals are held out.\"\"\"\n     now = utc(clock_time or (m.event_time if mode != \"live\"\n                             else datetime.now(timezone.utc)))\n@@ -71,7 +71,7 @@\n         s[\"flags\"].append(\"OPEN_END_HAS_NONZERO_RECEIVING_POWER\")\n         return s\n     try:\n-        predicted = solve_line(cfg, m.vs_ll_kv, p, q, temp)\n+        predicted = (solver or solve_line)(cfg, m.vs_ll_kv, p, q, temp)\n     except Exception as exc:\n         s[\"model_status\"] = \"MODEL_FAILED\"\n         s[\"flags\"].append(f\"{type(exc).__name__}: {exc}\")\n"
+    },
+    {
+      "path": "__init__.py",
+      "byte_identical": true,
+      "original_sha256": "a786c5b770f3f160f2c9304d5550699d7ba1c12bb44448d12303cd04748d05df",
+      "application_sha256": "a786c5b770f3f160f2c9304d5550699d7ba1c12bb44448d12303cd04748d05df"
+    }
+  ]
+}

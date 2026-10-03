@@ -1,0 +1,181 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "asset_id": {
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "parameter_version": {
+      "title": "Parameter Version",
+      "type": "string"
+    },
+    "topology_version": {
+      "title": "Topology Version",
+      "type": "string"
+    },
+    "valid_from": {
+      "format": "date-time",
+      "title": "Valid From",
+      "type": "string"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
+    },
+    "from_bus": {
+      "title": "From Bus",
+      "type": "string"
+    },
+    "to_bus": {
+      "title": "To Bus",
+      "type": "string"
+    },
+    "nominal_kv": {
+      "exclusiveMinimum": 0,
+      "title": "Nominal Kv",
+      "type": "number"
+    },
+    "nominal_frequency_hz": {
+      "default": 50.0,
+      "exclusiveMinimum": 0,
+      "title": "Nominal Frequency Hz",
+      "type": "number"
+    },
+    "length_km": {
+      "exclusiveMinimum": 0,
+      "title": "Length Km",
+      "type": "number"
+    },
+    "r_ohm_per_km": {
+      "minimum": 0,
+      "title": "R Ohm Per Km",
+      "type": "number"
+    },
+    "x_ohm_per_km": {
+      "exclusiveMinimum": 0,
+      "title": "X Ohm Per Km",
+      "type": "number"
+    },
+    "c_nf_per_km": {
+      "minimum": 0,
+      "title": "C Nf Per Km",
+      "type": "number"
+    },
+    "g_us_per_km": {
+      "default": 0.0,
+      "minimum": 0,
+      "title": "G Us Per Km",
+      "type": "number"
+    },
+    "max_i_ka": {
+      "exclusiveMinimum": 0,
+      "title": "Max I Ka",
+      "type": "number"
+    },
+    "parallel_circuits": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Parallel Circuits",
+      "type": "integer"
+    },
+    "bundle_count_per_phase": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Bundle Count Per Phase",
+      "type": "integer"
+    },
+    "derating_factor": {
+      "default": 1.0,
+      "exclusiveMinimum": 0,
+      "maximum": 1,
+      "title": "Derating Factor",
+      "type": "number"
+    },
+    "line_type": {
+      "default": "ol",
+      "enum": [
+        "ol",
+        "cs"
+      ],
+      "title": "Line Type",
+      "type": "string"
+    },
+    "in_service": {
+      "default": true,
+      "title": "In Service",
+      "type": "boolean"
+    },
+    "reference_temperature_c": {
+      "default": 20.0,
+      "title": "Reference Temperature C",
+      "type": "number"
+    },
+    "alpha_per_c": {
+      "default": 0.00403,
+      "minimum": 0,
+      "title": "Alpha Per C",
+      "type": "number"
+    },
+    "use_measured_temperature": {
+      "default": false,
+      "title": "Use Measured Temperature",
+      "type": "boolean"
+    },
+    "parameter_source": {
+      "title": "Parameter Source",
+      "type": "string"
+    },
+    "voltage_warn_kv": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Voltage Warn Kv"
+    },
+    "voltage_alarm_kv": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Voltage Alarm Kv"
+    }
+  },
+  "required": [
+    "asset_id",
+    "parameter_version",
+    "topology_version",
+    "valid_from",
+    "from_bus",
+    "to_bus",
+    "nominal_kv",
+    "length_km",
+    "r_ohm_per_km",
+    "x_ohm_per_km",
+    "c_nf_per_km",
+    "max_i_ka",
+    "parameter_source"
+  ],
+  "title": "LineConfig",
+  "type": "object"
+}

@@ -1,0 +1,239 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "line.measurement.v1",
+      "default": "line.measurement.v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "message_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Message Id",
+      "type": "string"
+    },
+    "asset_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.-]+$",
+      "title": "Asset Id",
+      "type": "string"
+    },
+    "event_time": {
+      "format": "date-time",
+      "title": "Event Time",
+      "type": "string"
+    },
+    "source_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Source Id",
+      "type": "string"
+    },
+    "dataset_id": {
+      "maxLength": 128,
+      "minLength": 1,
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "data_origin": {
+      "enum": [
+        "synthetic",
+        "utility",
+        "laboratory"
+      ],
+      "title": "Data Origin",
+      "type": "string"
+    },
+    "sequence_no": {
+      "minimum": 0,
+      "title": "Sequence No",
+      "type": "integer"
+    },
+    "connection_state": {
+      "default": "UNKNOWN",
+      "enum": [
+        "CONNECTED",
+        "RECEIVING_OPEN",
+        "DEENERGIZED",
+        "UNKNOWN"
+      ],
+      "title": "Connection State",
+      "type": "string"
+    },
+    "vs_ll_kv": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Vs Ll Kv"
+    },
+    "vr_ll_kv": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Vr Ll Kv"
+    },
+    "is_a": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Is A"
+    },
+    "ir_a": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ir A"
+    },
+    "p_send_mw": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "P Send Mw"
+    },
+    "q_send_mvar": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Q Send Mvar"
+    },
+    "p_recv_mw": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "P Recv Mw"
+    },
+    "q_recv_mvar": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Q Recv Mvar"
+    },
+    "frequency_hz": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Frequency Hz"
+    },
+    "conductor_temp_c": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Conductor Temp C"
+    },
+    "signal_quality": {
+      "additionalProperties": {
+        "enum": [
+          "GOOD",
+          "SUSPECT",
+          "BAD",
+          "MISSING"
+        ],
+        "type": "string"
+      },
+      "title": "Signal Quality",
+      "type": "object"
+    },
+    "uncertainty": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Uncertainty",
+      "type": "object"
+    },
+    "original_timestamp": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Original Timestamp"
+    },
+    "source_metadata": {
+      "additionalProperties": true,
+      "title": "Source Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "message_id",
+    "asset_id",
+    "event_time",
+    "source_id",
+    "dataset_id",
+    "data_origin",
+    "sequence_no"
+  ],
+  "title": "Measurement",
+  "type": "object"
+}
