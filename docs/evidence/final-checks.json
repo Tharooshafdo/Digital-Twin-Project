@@ -6,57 +6,80 @@
     "time": "466.540"
   },
   "all-tests.xml": {
-    "tests": "77",
+    "tests": "93",
     "failures": "0",
     "errors": "0",
-    "time": "204.212"
+    "time": "270.890"
+  },
+  "overview-tests.xml": {
+    "tests": "16",
+    "failures": "0",
+    "errors": "0",
+    "time": "20.925"
   },
   "browser-checks.json": {
     "checks": 11,
-    "run_id": "run_b6bdde4dd341401d8dfb8831e6ff5ef9"
+    "runtime_errors": 0
   },
-  "runtime-recovery": {
-    "platform": "Windows",
+  "overview-browser-checks.json": {
+    "checks": 11,
+    "runtime_errors": 0
+  },
+  "map_fallback": {
     "status": "PASS",
-    "qualification_job_lease_s": 15,
-    "default_job_lease_s": 300,
-    "checkpoint_before_restart": 1,
-    "checkpoint_after_restart": 6,
-    "committed_states": 6,
-    "duplicate_state_ids": 0,
-    "prior_manifests_unchanged": true,
-    "session_survived_recreation": true,
-    "run_id": "run_84b06531c7354c0bbfa3b18a126c886e",
-    "database": "SQLite"
+    "database": "isolated SQLite copy",
+    "backend_responses_mocked": false,
+    "external_google_request": "blocked before network delivery",
+    "checks": [
+      "Google script load failure shows visible message",
+      "Fallback renders coordinate map",
+      "Fallback map selection remains usable",
+      "No browser JavaScript runtime errors"
+    ],
+    "valid_key_google_service": "NOT RUN"
   },
-  "active_default_job_lease_s": 300.0,
   "ready": {
     "status": "ready",
     "database": "sqlite"
   },
+  "overview": {
+    "revision_id": "rev_6e24672c52e849e3b7890d53aaeb4d40",
+    "assets": 11,
+    "located_assets": 11,
+    "telemetry": {
+      "status": "FRESH",
+      "source_id": "demo.connected_grid.v1",
+      "data_origin": "synthetic",
+      "event_time": "2026-10-03T12:11:05Z",
+      "age_s": 6.548306,
+      "frequency_hz": 49.975707067130834,
+      "total_demand_mw": 70.63297957641021
+    }
+  },
+  "field_source": "NOT CONNECTED; correctly unavailable",
   "diagnostics": {
     "database": "sqlite",
-    "utc": "2026-10-03T11:10:41.076638+00:00",
+    "utc": "2026-10-03T12:11:11.598246+00:00",
     "counts": {
       "measurements": 306,
       "dead_letters": 0,
-      "jobs": 11,
-      "unpublished_outbox": 1182,
+      "jobs": 13,
+      "unpublished_outbox": 1470,
       "backlog_jobs": 0,
       "duplicate_deliveries": 0,
       "failed_snapshots": 0
     },
     "backlog_oldest_age_s": null,
-    "latest_observation_wall_age_s": 23714141.076638,
+    "latest_observation_wall_age_s": 23717771.598246,
     "solve_latency_ms_last_10000": {
-      "p50": 241.9401500010281,
-      "p95": 542.382144999283,
-      "p99": 833.7917450038368
+      "p50": 246.7386999996961,
+      "p95": 532.6123799990455,
+      "p99": 799.4371040008259
     },
-    "diagnostics_database_query_ms": 38.124800004879944,
+    "diagnostics_database_query_ms": 31.895700012682937,
     "disk": {
       "total_bytes": 241886154752,
-      "free_bytes": 90445094912
+      "free_bytes": 86364921856
     },
     "worker_concurrency_per_process": 1,
     "job_backlog_limit": 100,
@@ -65,5 +88,5 @@
     "production_scale_validated": false
   },
   "browser_run_states": 288,
-  "final_app_serves_built_frontend": true
+  "google_maps_valid_key": "NOT RUN: no supplied key"
 }

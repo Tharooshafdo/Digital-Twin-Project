@@ -85,3 +85,18 @@ is available up to 10,000 usable samples and explicitly unavailable above that
 bound. HTML figures show the first 1,000 states and preserve missing-value gaps.
 Exports stream database pages. Large-file streaming import, time-bucket chart
 aggregation and large-history percentile calculation are not implemented.
+# Overview contracts
+
+`GET /api/projects/{pid}/overview?mode=demo|live&source_id=<optional>` returns the
+effective published revision, component coordinates, usable grid telemetry,
+snapshot source/age/status and optional public Google Maps browser configuration.
+`PUT /api/projects/{pid}/locations` accepts bounded coordinate/provenance records.
+`POST /api/projects/{pid}/grid-observations` retains aligned grid-level readings in
+fixed kV/Hz/MW units, requires the as-of published model, and rejects conflicting
+source/snapshot identities. Viewers can inspect; engineers/admins can write.
+
+`POST /api/projects/{pid}/simulations/apply` is administrator-only. Its `run_id`
+references a completed scenario, never a new client-supplied candidate. The server
+checks the stored candidate digest and unchanged published baseline, then publishes
+an audited revision effective now. Repeating the same application is idempotent.
+See `overview.md` for payloads and boundaries; `openapi.json` contains these schemas.

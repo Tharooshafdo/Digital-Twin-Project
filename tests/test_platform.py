@@ -37,7 +37,7 @@ def test_migrations_populated_upgrade(platform):
     with platform["engine"].connect() as conn:
         assert conn.scalar(select(func.count()).select_from(db.users)) == 1
         assert conn.scalar(select(func.count()).select_from(db.revisions)) == 1
-        assert conn.scalar(text("SELECT version_num FROM alembic_version")) == "0005"
+        assert conn.scalar(text("SELECT version_num FROM alembic_version")) == "0006"
 
 def test_roles_and_project_scoping(platform):
     c = platform["client"]

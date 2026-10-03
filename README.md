@@ -86,6 +86,19 @@ The Linux script runs both services and stops them on Ctrl+C. Linux runtime was
 not executed on this Windows host. Core operation needs no cloud/paid service.
 The built UI uses local assets/system fonts.
 
+## Overview map and operating workflows
+
+Admin sign-in opens **Overview** with component locations, automatically refreshed
+synthetic grid voltage/frequency/demand, and **Simulate changes** / **Inspect
+operating data** actions. Engineers can save asset coordinates. Simulation compares
+the baseline and candidate before an administrator publishes the tested candidate
+to a new platform model version. Actual field values remain unavailable until a
+source is connected. Google Maps is configurable through a restricted browser key;
+the coordinate map works immediately without one.
+
+See [overview configuration and source contract](docs/overview.md) for exact Google
+Maps startup settings, telemetry API, data-quality boundaries and test evidence.
+
 ## Executable demo and engineering workflow
 
 ```powershell
@@ -129,6 +142,7 @@ overhead thermal model is used for cable thermal claims.
 .\.venv\Scripts\python.exe -m pytest --junitxml=docs/evidence/all-tests.xml
 .\.venv\Scripts\python.exe -m playwright install chromium
 .\.venv\Scripts\python.exe tools/browser_check.py
+.\.venv\Scripts\python.exe tools/overview_browser_check.py
 .\.venv\Scripts\python.exe tools/benchmark.py --assets 1 10 100 --snapshots 1
 .\.venv\Scripts\python.exe tools/benchmark.py --assets 1 10 100 --snapshots 10 --out docs/evidence/manual-benchmark.json
 ```

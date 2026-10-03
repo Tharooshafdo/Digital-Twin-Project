@@ -15,6 +15,7 @@ from . import db, auth, service
 from .domain import Network
 from .plugins import registry
 from .ingestion import parse_csv
+from . import overview
 
 class Body(BaseModel):
     model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
@@ -61,6 +62,13 @@ class AlarmPolicy(Body):
     high_kv: float = Field(gt=0)
     clear_kv: float = Field(ge=0)
     consecutive: int = Field(ge=1, le=1000)
+
+class LocationsRequest(Body):
+    locations: list[overview.AssetLocation] = Field(max_length=2000)
+
+class ApplySimulation(Body):
+    run_id: str
+    name: str = Field(default='Reviewed simulation', min_length=1, max_length=200)
 
 def create_app(database_url=None, frontend_dir=None):
     app = FastAPI(title="Power System Twin", version="0.1.0")
@@ -159,6 +167,38 @@ def create_app(database_url=None, frontend_dir=None):
         with engine.connect() as conn:
             access(conn, u, pid)
             return service.rows(conn, db.revisions, db.revisions.c.project_id == pid, limit=1000)
+    @app.get('/api/projects/{pid}/overview')
+    def grid_overview(pid: str, mode: str = 'demo', source_id: str | None = None, u=Depends(user)):
+        if mode not in ('demo', 'live'):
+            raise ValueError('Overview source mode must be demo or live')
+        with engine.connect() as conn:
+            access(conn,u,pid)
+            return overview.project_overview(conn,pid,mode,source_id)
+    @app.put('/api/projects/{pid}/locations')
+    def save_locations(pid: str, body: LocationsRequest, u=Depends(user)):
+        with engine.begin() as conn:
+            access(conn,u,pid,'engineer')
+            active=overview.active_revision(conn,pid)
+            assets={c['id'] for c in active['payload']['components']} if active else set()
+            if len({l.asset_id for l in body.locations})!=len(body.locations):
+                raise ValueError('Duplicate asset location')
+            for location in body.locations:
+                if location.asset_id not in assets:
+                    raise ValueError('Location must reference an asset in the published project model')
+                conn.execute(db.entities['asset_locations'].insert().values(id=db.uid('location'),
+                    project_id=pid,version='1',created_at=db.now(),payload=location.model_dump()))
+            db.audit_event(conn,u['id'],'locations.updated',pid,{'asset_ids':[v.asset_id for v in body.locations]})
+        return {'saved':len(body.locations)}
+    @app.post('/api/projects/{pid}/grid-observations')
+    def grid_observation(pid: str, body: overview.GridObservation, u=Depends(user)):
+        with engine.begin() as conn:
+            access(conn,u,pid,'engineer')
+            return overview.store_observation(conn,pid,body,u['id'])
+    @app.post('/api/projects/{pid}/simulations/apply')
+    def apply_simulation(pid: str, body: ApplySimulation, u=Depends(user)):
+        with engine.begin() as conn:
+            access(conn,u,pid,'administrator')
+            return overview.apply_simulation(conn,pid,body.run_id,u['id'],body.name)
     @app.post("/api/projects/{pid}/revisions")
     def new_revision(pid: str, body: RevisionRequest, u=Depends(user)):
         with engine.begin() as conn:

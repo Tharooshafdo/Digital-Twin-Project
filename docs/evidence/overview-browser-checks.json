@@ -1,0 +1,55 @@
+{
+  "mocked_backend_responses": false,
+  "checks": [
+    {
+      "check": "Admin lands on geographic overview with demand, frequency and voltage units",
+      "status": "PASS"
+    },
+    {
+      "check": "Separate worker generates a new synthetic connected-grid snapshot at automatic cadence",
+      "status": "PASS"
+    },
+    {
+      "check": "Geographic map markers select the component inspector",
+      "status": "PASS"
+    },
+    {
+      "check": "Location editor saves to real database and survives browser reload",
+      "status": "PASS"
+    },
+    {
+      "check": "Simulation runs real baseline/candidate network solves including changed transformer tap",
+      "status": "PASS"
+    },
+    {
+      "check": "Editing the candidate invalidates the previous simulation review",
+      "status": "PASS"
+    },
+    {
+      "check": "Administrator publishes the exact tested candidate into a new model version; prior run stays immutable",
+      "status": "PASS"
+    },
+    {
+      "check": "Inspection separates live field source from demo and keeps missing field readings unavailable",
+      "status": "PASS"
+    },
+    {
+      "check": "Recorded-history inspection reads persistent run summaries",
+      "status": "PASS"
+    },
+    {
+      "check": "Fresh administrator login always returns to Overview",
+      "status": "PASS"
+    },
+    {
+      "check": "No browser JavaScript runtime errors",
+      "status": "PASS"
+    }
+  ],
+  "console_errors": [],
+  "test_project_id": "project_f8e5bb06a4f14f4c99dc78f03aaf6504",
+  "applied_revision_id": "rev_d707522f8ef5451c9a063858747ce9ef",
+  "simulation_run_id": "run_3af0f4d09a3a4073af78735578be291f",
+  "browser_version": "153.0.8010.12",
+  "google_maps": "NOT RUN: no supplied browser API key"
+}

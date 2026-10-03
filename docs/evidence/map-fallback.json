@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "database": "isolated SQLite copy",
+  "backend_responses_mocked": false,
+  "external_google_request": "blocked before network delivery",
+  "checks": [
+    "Google script load failure shows visible message",
+    "Fallback renders coordinate map",
+    "Fallback map selection remains usable",
+    "No browser JavaScript runtime errors"
+  ],
+  "valid_key_google_service": "NOT RUN"
+}

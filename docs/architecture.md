@@ -29,3 +29,22 @@ The local application serves the built frontend and API from one origin.
 The supplied references are engineering guidance, not field validation. All demo
 parameters, observations and thresholds remain visibly synthetic. Runtime gates
 that cannot be exercised will be labelled NOT RUN, with reproducible commands.
+# Geographic overview extension decision
+
+Asset latitude/longitude/provenance are audited registry metadata, separate from
+diagram positions and immutable electrical topology. Source-aligned grid-level
+observations persist in a dedicated table and retain identity, raw qualities,
+source/event/receipt time and effective revision. The overview uses one source
+snapshot and rejects stale/future/quality/model mismatches. It does not derive
+system demand by adding branch flows or infer measured frequency from AC power flow.
+
+A five-second synthetic producer runs inside the separate worker for project demo,
+with explicit labels and a bounded 720-frame buffer. Field sources require an
+authenticated read-only adapter. Maps use optional Google Maps advanced markers;
+the local SVG geographic-coordinate view is available without that dependency.
+
+Simulation candidates reuse persisted scenario jobs and the shared solver.
+Administrator application uses the exact completed candidate, verifies its digest
+and unchanged current baseline, and creates a new published version with lineage.
+Neither preview nor publication sends equipment commands. Current/recorded
+inspection remains separate from simulation and does not present replay as live.

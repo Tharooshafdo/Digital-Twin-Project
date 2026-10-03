@@ -28,7 +28,10 @@ services:
     build: .
     depends_on:
       init: {condition: service_completed_successfully}
-    environment: *appenv
+    environment:
+      <<: *appenv
+      GOOGLE_MAPS_BROWSER_KEY: ${GOOGLE_MAPS_BROWSER_KEY:-}
+      GOOGLE_MAPS_MAP_ID: ${GOOGLE_MAPS_MAP_ID:-DEMO_MAP_ID}
     ports: ["127.0.0.1:8000:8000"]
     volumes: [appdata:/app/data]
     healthcheck:

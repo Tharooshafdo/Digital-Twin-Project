@@ -289,6 +289,210 @@
         }
       }
     },
+    "/api/projects/{pid}/overview": {
+      "get": {
+        "summary": "Grid Overview",
+        "operationId": "grid_overview_api_projects__pid__overview_get",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Pid"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "demo",
+              "title": "Mode"
+            }
+          },
+          {
+            "name": "source_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Source Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projects/{pid}/locations": {
+      "put": {
+        "summary": "Save Locations",
+        "operationId": "save_locations_api_projects__pid__locations_put",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Pid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LocationsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projects/{pid}/grid-observations": {
+      "post": {
+        "summary": "Grid Observation",
+        "operationId": "grid_observation_api_projects__pid__grid_observations_post",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Pid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GridObservation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/projects/{pid}/simulations/apply": {
+      "post": {
+        "summary": "Apply Simulation",
+        "operationId": "apply_simulation_api_projects__pid__simulations_apply_post",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Pid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApplySimulation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/projects/{pid}/revisions/{rid}": {
       "get": {
         "summary": "Revision",
@@ -1248,6 +1452,111 @@
         ],
         "title": "AlarmPolicy"
       },
+      "ApplySimulation": {
+        "properties": {
+          "run_id": {
+            "type": "string",
+            "title": "Run Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Name",
+            "default": "Reviewed simulation"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "run_id"
+        ],
+        "title": "ApplySimulation"
+      },
+      "AssetLocation": {
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Asset Id"
+          },
+          "latitude": {
+            "type": "number",
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Latitude"
+          },
+          "longitude": {
+            "type": "number",
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Longitude"
+          },
+          "label": {
+            "type": "string",
+            "maxLength": 200,
+            "title": "Label",
+            "default": ""
+          },
+          "provenance": {
+            "type": "string",
+            "enum": [
+              "illustrative",
+              "surveyed",
+              "user_entered"
+            ],
+            "title": "Provenance",
+            "default": "user_entered"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "asset_id",
+          "latitude",
+          "longitude"
+        ],
+        "title": "AssetLocation"
+      },
+      "BusReading": {
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "quality": {
+            "type": "string",
+            "enum": [
+              "GOOD",
+              "SUSPECT",
+              "BAD",
+              "MISSING"
+            ],
+            "title": "Quality",
+            "default": "GOOD"
+          },
+          "asset_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Asset Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "asset_id"
+        ],
+        "title": "BusReading"
+      },
       "Component": {
         "properties": {
           "id": {
@@ -1342,6 +1651,63 @@
         ],
         "title": "ControlRequest"
       },
+      "GridObservation": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Snapshot Id"
+          },
+          "revision_id": {
+            "type": "string",
+            "title": "Revision Id"
+          },
+          "event_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Event Time"
+          },
+          "source_id": {
+            "type": "string",
+            "maxLength": 120,
+            "minLength": 1,
+            "title": "Source Id"
+          },
+          "data_origin": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "field"
+            ],
+            "title": "Data Origin"
+          },
+          "frequency_hz": {
+            "$ref": "#/components/schemas/Reading"
+          },
+          "total_demand_mw": {
+            "$ref": "#/components/schemas/Reading"
+          },
+          "bus_voltages_kv": {
+            "items": {
+              "$ref": "#/components/schemas/BusReading"
+            },
+            "type": "array",
+            "maxItems": 2000,
+            "title": "Bus Voltages Kv"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "revision_id",
+          "event_time",
+          "source_id",
+          "data_origin"
+        ],
+        "title": "GridObservation"
+      },
       "HTTPValidationError": {
         "properties": {
           "detail": {
@@ -1381,6 +1747,24 @@
           "mapping"
         ],
         "title": "ImportRequest"
+      },
+      "LocationsRequest": {
+        "properties": {
+          "locations": {
+            "items": {
+              "$ref": "#/components/schemas/AssetLocation"
+            },
+            "type": "array",
+            "maxItems": 2000,
+            "title": "Locations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "locations"
+        ],
+        "title": "LocationsRequest"
       },
       "Login": {
         "properties": {
@@ -1444,6 +1828,35 @@
           "name"
         ],
         "title": "ProjectRequest"
+      },
+      "Reading": {
+        "properties": {
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "quality": {
+            "type": "string",
+            "enum": [
+              "GOOD",
+              "SUSPECT",
+              "BAD",
+              "MISSING"
+            ],
+            "title": "Quality",
+            "default": "GOOD"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Reading"
       },
       "RevisionRequest": {
         "properties": {

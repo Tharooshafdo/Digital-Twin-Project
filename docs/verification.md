@@ -8,12 +8,15 @@ All utility data, parameters and field holdouts remain absent.
 | Check | Executed outcome | Evidence |
 |---|---|---|
 | Original suite before refactor | 30 passed, 6 dependency warnings | `evidence/reference-tests.xml` |
-| Full final Python suite | 77 passed, 11 dependency warnings, 204.21s | `evidence/all-tests.xml` |
+| Full final Python suite | 93 passed, 11 dependency warnings, 270.88s | `evidence/all-tests.xml` |
 | Reference preservation | 48 archive files byte-identical; 16 modules reused; only optional solver hook in twin.py changed | `evidence/reference-comparison.json` |
 | Runtime dependency consistency | pip check: no broken requirements | installed lock environment |
 | Production frontend | TypeScript and Vite build passed | `evidence/frontend-build.txt` |
 | npm audit | 0 reported vulnerabilities after Vite patch | `evidence/npm-audit.json` |
 | Real Chromium browser | 11 checks passed; no mocked responses or JS runtime errors | `evidence/browser-checks.json` |
+| Geographic overview/simulation/inspection browser | 11 checks passed against actual API/worker; publication confined to a named new test project | `evidence/overview-browser-checks.json` |
+| New overview backend checks | 16 passed: qualities/as-of/freshness, locations, identities, permissions, upgrade and reviewed publication | `evidence/overview-tests.xml` |
+| Google Maps failure fallback | PASS: script delivery blocked; visible error and functional coordinate map; valid-key Google rendering NOT RUN | `evidence/map-fallback.json` |
 | Actual historical browser replay | 288 persisted solved states, 1 explicit invalid CSV row | browser results/report and SQLite run |
 | Scenario comparison | Persisted baseline and changed-load network solve, positive loss delta | browser-checks.json and exported report |
 | SQLite migration/recovery/auth/plugins | Populated upgrade, new identity backfill, roles/projects, races, leases, restore and retention tests passed | all-tests.xml |
@@ -24,7 +27,7 @@ All utility data, parameters and field holdouts remain absent.
 | Compose specification | 7-service YAML parsed; NOT a runtime deployment | `evidence/compose-static.json` |
 
 The original baseline run took 466.54s. The later full run includes those original
-tests plus 47 application checks, including the optional reference learning and
+tests plus 63 application checks, including the optional reference learning and
 forecast tests. Differences in duration are workstation load/runtime effects;
 no performance claim is based on pytest duration. Visible upstream warnings are
 Starlette/AnyIO deprecation and pandapower/Pandas future/deprecation warnings.

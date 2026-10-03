@@ -198,7 +198,15 @@ def main():
     engine = db.engine_for()
     owner = db.uid("worker")
     print(json.dumps({"event": "worker.started", "owner": owner, "concurrency": 1}), flush=True)
+    next_demo = 0
     while True:
+        if os.getenv('GRID_TWIN_DEMO_TELEMETRY','1')=='1' and time.monotonic()>=next_demo:
+            next_demo=time.monotonic()+5
+            try:
+                from .overview import tick_demo
+                tick_demo(engine)
+            except Exception as exc:
+                print(json.dumps({'level':'error','event':'demo.telemetry_failed','error':str(exc)}),flush=True)
         if not run_one(engine, owner):
             time.sleep(0.1)
 

@@ -9,7 +9,12 @@ qualification gate absent on this host. **Deferred** is not a completed feature.
 |---|---|---|
 | Reference reuse and pinned scientific core | Implemented/tested | Original 30-test baseline; full application regression XML; byte comparison of 48 original files |
 | React/TypeScript browser + FastAPI + separate worker | Implemented/tested | Production build, real Chromium checks, local startup logs |
-| SQLite persistent platform and Alembic | Implemented/tested | Populated upgrade, UTC round trips, native schema versions 0001–0005 |
+| Geographic overview and editable asset locations | Implemented/tested | Offline coordinate map, persistent coordinates/provenance and real-browser marker/editor checks; illustrative demo locations |
+| Google Maps advanced markers and geographic connections | Implemented/NOT RUN | Optional restricted browser key/map ID and fallback; no actual Google key supplied |
+| Refreshing grid voltage/frequency/demand | Implemented/tested synthetic | Separate demo producer, aligned source snapshot, quality/freshness/as-of gates; actual utility feed absent |
+| Simulation review before model publication | Implemented/tested | Baseline/candidate shared solves, changed-input invalidation, admin-only exact candidate publication, stale baseline rejection and immutable history |
+| Current/recorded operating inspection | Implemented/tested | Field/demo source separation, missing source unavailable, bus qualities and selected recorded-run inspection; no utility adapter |
+| SQLite persistent platform and Alembic | Implemented/tested | Populated upgrade, UTC round trips, native schema versions 0001–0006 |
 | PostgreSQL JSONB/native timestamps and Compose deployment | Implemented/NOT RUN | Migrations/config supplied; YAML parsed only; Docker absent |
 | Asset registry and versioned component manifests | Implemented/tested | Domain/plugin/API tests; catalog/UI forms |
 | Shared positive-sequence AC buses/terminals/network | Implemented/tested | Connected balance, terminal compatibility, duplicate ID/island/reference tests |

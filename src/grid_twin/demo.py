@@ -59,11 +59,15 @@ def initialize(engine, credentials_path="data/initial-credentials.json"):
             if conn.scalar(select(db.projects.c.id).where(db.projects.c.id=="demo")) and not conn.scalar(select(db.runs.c.id).where(db.runs.c.id=="stream_demo")):
                 rid=conn.scalar(select(db.revisions.c.id).where(db.revisions.c.project_id=="demo",db.revisions.c.status=="published"))
                 conn.execute(db.runs.insert().values(id="stream_demo",project_id="demo",kind="mqtt_stream",mode="replay",created_at=db.now(),manifest=service.run_manifest(conn,"demo",rid,"replay")))
+            from .overview import seed_demo_locations
+            seed_demo_locations(conn)
             return {"status": "already_initialized", "credentials": str(credentials_path)}
         conn.execute(db.projects.insert().values(id="demo", name="Transmission research • synthetic", created_at=db.now()))
         account = auth.create_user(conn, "admin", "administrator", ["demo"])
         rid = service.create_revision(conn, "demo", demo_network(), "Synthetic connected baseline", account["id"], "2020-01-01T00:00:00Z")
         service.publish_revision(conn, "demo", rid, account["id"])
+        from .overview import seed_demo_locations
+        seed_demo_locations(conn)
         conn.execute(db.runs.insert().values(id="stream_demo",project_id="demo",kind="mqtt_stream",mode="replay",created_at=db.now(),manifest=service.run_manifest(conn,"demo",rid,"replay")))
         for entry in __import__("grid_twin.plugins", fromlist=["registry"]).registry.catalog():
             conn.execute(db.entities["asset_types"].insert().values(id=entry["type_id"], project_id=None, version=entry["plugin_version"], created_at=db.now(), payload=entry))

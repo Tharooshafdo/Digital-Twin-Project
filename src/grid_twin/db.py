@@ -110,10 +110,13 @@ audit = Table("audit_events", metadata, Column("id", String(80), primary_key=Tru
 # do not imply implemented model-artifact promotion or retention workflows.
 entities = {}
 for name in ("asset_types", "assets", "terminals", "parameter_versions", "data_sources", "signal_mappings",
-             "snapshots", "validation_reports", "model_artifacts", "topology_timelines", "alarm_policy_versions"):
+             "snapshots", "validation_reports", "model_artifacts", "topology_timelines", "alarm_policy_versions",
+             "asset_locations", "grid_observations"):
     entities[name] = Table(name, metadata, Column("id", String(180), primary_key=True),
         Column("project_id", ForeignKey("projects.id")), Column("version", String(80), nullable=False),
         Column("created_at", T, nullable=False), Column("payload", J, nullable=False))
+    if name in ('asset_locations','grid_observations'):
+        Index('ix_'+name+'_project_created',entities[name].c.project_id,entities[name].c.created_at)
 
 def engine_for(url=None):
     url = url or os.getenv("DATABASE_URL", "sqlite:///data/platform.db")
