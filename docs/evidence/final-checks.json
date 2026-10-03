@@ -6,46 +6,64 @@
     "time": "466.540"
   },
   "all-tests.xml": {
-    "tests": "76",
+    "tests": "77",
     "failures": "0",
     "errors": "0",
-    "time": "151.555"
+    "time": "204.212"
   },
   "browser-checks.json": {
-    "checks": 11
+    "checks": 11,
+    "run_id": "run_b6bdde4dd341401d8dfb8831e6ff5ef9"
   },
+  "runtime-recovery": {
+    "platform": "Windows",
+    "status": "PASS",
+    "qualification_job_lease_s": 15,
+    "default_job_lease_s": 300,
+    "checkpoint_before_restart": 1,
+    "checkpoint_after_restart": 6,
+    "committed_states": 6,
+    "duplicate_state_ids": 0,
+    "prior_manifests_unchanged": true,
+    "session_survived_recreation": true,
+    "run_id": "run_84b06531c7354c0bbfa3b18a126c886e",
+    "database": "SQLite"
+  },
+  "active_default_job_lease_s": 300.0,
   "ready": {
     "status": "ready",
     "database": "sqlite"
   },
   "diagnostics": {
     "database": "sqlite",
-    "utc": "2026-10-03T10:58:46.301455+00:00",
+    "utc": "2026-10-03T11:10:41.076638+00:00",
     "counts": {
       "measurements": 306,
       "dead_letters": 0,
-      "jobs": 8,
-      "unpublished_outbox": 884,
-      "backlog_jobs": 1,
+      "jobs": 11,
+      "unpublished_outbox": 1182,
+      "backlog_jobs": 0,
       "duplicate_deliveries": 0,
       "failed_snapshots": 0
     },
-    "backlog_oldest_age_s": 256.948302,
-    "latest_observation_wall_age_s": 23713426.301455,
+    "backlog_oldest_age_s": null,
+    "latest_observation_wall_age_s": 23714141.076638,
     "solve_latency_ms_last_10000": {
-      "p50": 233.75174999819137,
-      "p95": 590.3852699979311,
-      "p99": 854.1137970036649
+      "p50": 241.9401500010281,
+      "p95": 542.382144999283,
+      "p99": 833.7917450038368
     },
-    "diagnostics_database_query_ms": 20.534600000246428,
+    "diagnostics_database_query_ms": 38.124800004879944,
     "disk": {
       "total_bytes": 241886154752,
-      "free_bytes": 90496303104
+      "free_bytes": 90445094912
     },
     "worker_concurrency_per_process": 1,
     "job_backlog_limit": 100,
     "import_row_limit": 10000,
     "mqtt": "disabled",
     "production_scale_validated": false
-  }
+  },
+  "browser_run_states": 288,
+  "final_app_serves_built_frontend": true
 }

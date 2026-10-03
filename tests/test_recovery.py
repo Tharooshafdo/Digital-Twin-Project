@@ -71,3 +71,16 @@ def test_bounded_job_backlog(platform,dataset):
         for _ in range(100):service.enqueue(conn,'demo','replay',{'frames':dataset[2]['frames'][:1]},manifest,'test')
         import pytest
         with pytest.raises(OverflowError):service.enqueue(conn,'demo','replay',{'frames':[]},manifest,'test')
+
+def test_noneditable_package_layout_finds_runtime_resources(tmp_path):
+    import shutil,os
+    root=Path(__file__).resolve().parents[1]
+    installed=tmp_path/'site-packages'
+    for package in ('grid_twin','tl_twin'):shutil.copytree(root/'src'/package,installed/package)
+    env={**os.environ,'PYTHONPATH':str(installed),'GRID_TWIN_ROOT':str(root)}
+    url='sqlite:///'+str(tmp_path/'packaged.db').replace('\\','/')
+    result=subprocess.run([sys.executable,'-m','grid_twin.cli','--db',url,'init'],cwd=root,env=env,capture_output=True,text=True)
+    assert result.returncode==0,result.stderr
+    assert json.loads(result.stdout)['status']=='initialized'
+    with db.engine_for(url).connect() as conn:
+        assert conn.scalar(select(func.count()).select_from(db.revisions))==1

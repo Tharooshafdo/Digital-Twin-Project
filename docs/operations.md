@@ -6,7 +6,10 @@ HTTP handler. More worker processes can claim independent jobs with transactiona
 leases; PostgreSQL uses SKIP LOCKED and SQLite uses conditional ownership updates.
 Each solver builds a new mutable pandapower network. No solver-network cache is
 introduced. A solve taking over the 300-second lease needs further engineering;
-long-study heartbeats and hard CPU timeouts are not implemented.
+long-study heartbeats and hard CPU timeouts are not implemented. The lease is
+configurable through `GRID_TWIN_JOB_LEASE_S` (5–3,600 seconds, default 300).
+The actual Windows qualification used 15 seconds for subsecond fixture solves,
+then restored the normal 300-second service configuration.
 
 Replay jobs checkpoint each frame in the same transaction as measurement, state,
 alarm, snapshot and outbox. Crash before commit leaves the checkpoint unchanged.

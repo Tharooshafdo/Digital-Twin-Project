@@ -9,7 +9,9 @@ from .solver import solve_network, line_config
 from tl_twin.contracts import Measurement
 from tl_twin.twin import evaluate
 
-LEASE_S = 300
+LEASE_S = float(os.getenv("GRID_TWIN_JOB_LEASE_S", "300"))
+if not 5 <= LEASE_S <= 3600:
+    raise ValueError("Job lease must be between 5 and 3600 seconds")
 
 def claim(engine, owner):
     clock = time.time()

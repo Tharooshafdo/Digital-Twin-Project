@@ -1,0 +1,14 @@
+{
+  "platform": "Windows",
+  "status": "PASS",
+  "qualification_job_lease_s": 15,
+  "default_job_lease_s": 300,
+  "checkpoint_before_restart": 1,
+  "checkpoint_after_restart": 6,
+  "committed_states": 6,
+  "duplicate_state_ids": 0,
+  "prior_manifests_unchanged": true,
+  "session_survived_recreation": true,
+  "run_id": "run_84b06531c7354c0bbfa3b18a126c886e",
+  "database": "SQLite"
+}

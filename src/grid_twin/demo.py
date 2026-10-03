@@ -2,11 +2,12 @@ import csv
 import io
 import json
 import tempfile
+import os
 from pathlib import Path
 from . import db, auth, service
 from tl_twin.cli import generate
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(os.getenv("GRID_TWIN_ROOT", str(Path.cwd()))).resolve()
 
 def demo_network():
     spec = json.loads((ROOT/"config/network.json").read_text())

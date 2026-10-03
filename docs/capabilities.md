@@ -44,7 +44,7 @@ qualification gate absent on this host. **Deferred** is not a completed feature.
 | Organizational identity/TLS shared deployment | Deferred integration | Reverse-proxy boundary documented; no OIDC/SAML/MFA/password-reset/shared limiter implementation |
 | Diagnostics and measured 1/10/100 workloads | Implemented/measured | Hardware, timing, throughput, backlog and payload evidence; no sustained production/HA claim |
 | SQLite backups/isolated restore | Implemented/tested | Backup API, restored counts/manifests; safe new paths only |
-| Windows service recreation | Runtime check | `runtime-recovery.json` is the authority for executed outcome; leases may delay crash recovery up to 300s |
+| Windows service recreation | Implemented/tested | Forced interruption at checkpoint 1, recovery to 6, no duplicate states; 15s qualification lease then restored default 300s |
 | PostgreSQL restore/broker/DB service interruption | NOT RUN | Exact named-environment commands in operations/README; Docker runtime absent |
 | Opt-in state retention archives | Implemented/tested | Dry run, checksum/count verification, audit/report lineage; active/unpublished streams excluded |
 | Large-history/time-bucket analytics and raw-data lifecycle | Deferred | Page limits/aggregates work; >10k p95, streaming large-file imports, chart time bucketing and archive reconstruction UI not implemented |

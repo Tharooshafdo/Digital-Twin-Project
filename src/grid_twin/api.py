@@ -429,7 +429,7 @@ def create_app(database_url=None, frontend_dir=None):
                     "mqtt": "disabled" if not os.getenv("MQTT_HOST") else "configured; consult bridge logs",
                     "production_scale_validated": False}
 
-    dist = Path(frontend_dir or Path(__file__).resolve().parents[2]/"frontend"/"dist")
+    dist = Path(frontend_dir or Path(os.getenv("GRID_TWIN_ROOT", str(Path.cwd()))).resolve()/"frontend"/"dist")
     if dist.exists():
         app.mount("/", StaticFiles(directory=dist, html=True), name="frontend")
     return app

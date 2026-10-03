@@ -139,6 +139,6 @@ def audit_event(conn, actor, action, project_id=None, payload=None):
 def migrate(url=None):
     from alembic.config import Config
     from alembic import command
-    cfg = Config(str(Path(__file__).resolve().parents[2] / "alembic.ini"))
+    cfg = Config(str(Path(os.getenv("GRID_TWIN_ROOT", str(Path.cwd()))).resolve() / "alembic.ini"))
     cfg.set_main_option("sqlalchemy.url", (url or os.getenv("DATABASE_URL", "sqlite:///data/platform.db")).replace("%", "%%"))
     command.upgrade(cfg, "head")

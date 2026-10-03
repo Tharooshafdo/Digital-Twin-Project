@@ -8,7 +8,7 @@ All utility data, parameters and field holdouts remain absent.
 | Check | Executed outcome | Evidence |
 |---|---|---|
 | Original suite before refactor | 30 passed, 6 dependency warnings | `evidence/reference-tests.xml` |
-| Full final Python suite | 76 passed, 11 dependency warnings, 151.55s | `evidence/all-tests.xml` |
+| Full final Python suite | 77 passed, 11 dependency warnings, 204.21s | `evidence/all-tests.xml` |
 | Reference preservation | 48 archive files byte-identical; 16 modules reused; only optional solver hook in twin.py changed | `evidence/reference-comparison.json` |
 | Runtime dependency consistency | pip check: no broken requirements | installed lock environment |
 | Production frontend | TypeScript and Vite build passed | `evidence/frontend-build.txt` |
@@ -17,13 +17,14 @@ All utility data, parameters and field holdouts remain absent.
 | Actual historical browser replay | 288 persisted solved states, 1 explicit invalid CSV row | browser results/report and SQLite run |
 | Scenario comparison | Persisted baseline and changed-load network solve, positive loss delta | browser-checks.json and exported report |
 | SQLite migration/recovery/auth/plugins | Populated upgrade, new identity backfill, roles/projects, races, leases, restore and retention tests passed | all-tests.xml |
+| Installed-package resource paths | Separate site-packages import and initialization located migrations/config correctly | all-tests.xml; Docker execution remains NOT RUN |
 | API contract and Python compilation | OpenAPI recorded; compileall passed | `openapi.json`, sources/migrations/tools |
 | Small workload measurements | 1/10/100 independent assets committed and solved; three connected solves balanced | `evidence/benchmark.json` |
-| Windows process restart | Gate outcome in runtime-recovery.json | `evidence/runtime-recovery.json` |
+| Windows process restart | PASS: interrupted at 1, recovered to 6 states, no duplicates, unchanged prior manifests/session retained | `evidence/runtime-recovery.json`; qualification lease 15s, default restored to 300s |
 | Compose specification | 7-service YAML parsed; NOT a runtime deployment | `evidence/compose-static.json` |
 
 The original baseline run took 466.54s. The later full run includes those original
-tests plus 46 application checks, including the optional reference learning and
+tests plus 47 application checks, including the optional reference learning and
 forecast tests. Differences in duration are workstation load/runtime effects;
 no performance claim is based on pytest duration. Visible upstream warnings are
 Starlette/AnyIO deprecation and pandapower/Pandas future/deprecation warnings.
